@@ -79,7 +79,10 @@
         }
     </style>
 </head>
+
 <body>
+    <a href="{% url 'logout' %}"><button>Logout</button></a>
+    {% if user.is_authenticated %}
     <div class="fullwidth">
         <form action="/" method="post">
             {% csrf_token %}
@@ -117,8 +120,12 @@
                 
             </tr>
             {% endfor %}
-        </table>    
+        </table>
+        
     </div>
+    {% else %}
+    <h2>Please <a href="{% url 'login' %}">Login</a> to see the content</h2>
+    {% endif %} 
 </body>
 </html>
 

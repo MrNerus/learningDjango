@@ -24,4 +24,7 @@ urlpatterns = [
     path("delete/<int:id>", blogView.Delete, name="delete"),
     path("update/<int:id>", blogView.Update, name="update"),
     path("search/", blogView.Search, name="search"),
+    path("login/", blogView.HandleLogin, name="login"),
+    path("signup/", blogView.HandleSignup, name="signup"),
+    path("logout/", blogView.HandelLogout, name="logout"),
 ]
